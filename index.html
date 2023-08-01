@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <style>
+      /* Style the input field and the clear button */
+      .input-container {
+        position: relative;
+      }
+      input {
+        padding-right: 25px;
+      }
+      .clear-button {
+        position: absolute;
+        top: 45%;
+        left: 175px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        display: none;
+      }
+      .clear-button:hover {
+        color: red; /* Change color on hover if desired */
+      }
+    .box-1{
+      display: flex ;
+    align-items: center;
+    gap: 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <hr />
+    <div class="box-1">
+    <h2>
+      Search your image here:</h2> 
+      <div class="input-container">
+        <input type="text" id="myInput" placeholder="Type here..." />
+        <span class="clear-button" id="clearButton">&#10006;</span>
+      </div>
+      <button>search</button>
+    
+    </div>
+    <br />
+    <img
+      style="border-radius: 30%"
+      src="/task-2/panda.jpg"
+      alt="panda.jpg"
+      width="300"
+      height="300"
+    />
+
+    <br /><br />
+    <p style="margin-bottom: 30px">
+      <a
+        target="_blank"
+        href="https://www.google.com/search?sxsrf=AB5stBjmPht3HEv5FiAINX1He4G4HxYs4A:1690916449679&q=panda&tbm=isch&source=lnms&sa=X&ved=2ahUKEwi5wM_SkryAAxUgZvUHHTDQBgEQ0pQJegQIDRAB&biw=958&bih=913&dpr=1#imgrc=bAU9ngIRUQkDgM"
+        >For more click here</a
+      >
+    </p>
+    <!-- </div> -->
+    <hr />
+    <form>
+      <p>Feedback Form:</p>
+      <h3>
+        Name: <br />
+        <input type="text" name="" />
+      </h3>
+      <h3>
+        Date: <br />
+        <input type="date" name="" id="" />
+      </h3>
+      <h3>
+        Comment: <br />
+        <textarea name="" id="" cols="45" rows="5"></textarea>
+      </h3>
+      <input type="submit" value="submit" />
+    </form>
+    <script>
+      var inputField = document.getElementById("myInput");
+      var clearButton = document.getElementById("clearButton");
+
+      inputField.addEventListener("input", function () {
+        if (inputField.value !== "") {
+          clearButton.style.display = "block";
+        } else {
+          clearButton.style.display = "none";
+        }
+      });
+      clearButton.addEventListener("click", function () {
+        inputField.value = "";
+        clearButton.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
